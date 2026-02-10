@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "DAM Configuration Schema",
+  "type": "object",
+
+  "properties": {
+    "Application": {
+      "type": "object",
+      "properties": {
+        "Name": { "type": "string" },
+        "Version": { "type": "string" },
+        "Environment": { "type": "string" }
+      },
+      "required": [ "Name", "Version", "Environment" ]
+    },
+
+    "DAM": {
+      "type": "object",
+      "properties": {
+        "StoragePath": { "type": "string" },
+        "MaxUploadSizeMB": { "type": "number" },
+        "AllowedFileTypes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "EnableIndexing": { "type": "boolean" },
+        "IndexingStrategy": { "type": "string" }
+      },
+      "required": [ "StoragePath", "MaxUploadSizeMB", "EnableIndexing" ]
+    },
+
+    "Database": {
+      "type": "object",
+      "properties": {
+        "Provider": { "type": "string" },
+        "ConnectionString": { "type": "string" }
+      },
+      "required": [ "Provider", "ConnectionString" ]
+    },
+
+    "Logging": {
+      "type": "object"
+    }
+  },
+
+  "required": [ "Application", "DAM", "Database", "Logging" ]
+}

@@ -11,6 +11,7 @@ obj/
 # VS cache
 .vs/
 .vscode/
+.idea/
 
 # Debug and release folders
 [Dd]ebug*/
